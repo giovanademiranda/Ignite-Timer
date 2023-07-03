@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.main`
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   height: 100%;
   flex: 1;
   display: flex;
@@ -16,7 +16,7 @@ export const HomeContainer = styled.main`
   }
 `
 export const FormContainer = styled.div`
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   width: 100%;
   display: flex;
   align-items: center;
@@ -26,6 +26,31 @@ export const FormContainer = styled.div`
   font-size: 1.125rem;
   font-weight: bold;
   flex-wrap: wrap;
+`
+const BaseInput = styled.input`
+  background:  transparent;
+  height: 2.5rem;
+  border: 0;
+  border-bottom: 2px solid ${(props) => props.theme['gray-500']};
+  font-weight: bold;
+  font-size: inherit;
+  padding: 0 0.5rem;
+  color: ${(props) => props.theme['gray-100']};
+
+  &:focus {
+    box-shadow: none;
+    border-color: ${(props) => props.theme['green-500']}
+  }
+
+  &::placeholder {
+    color: ${(props) => props.theme['gray-500']};
+  }
+`
+export const TaskInput = styled(BaseInput)`
+  flex: 1;
+`
+export const MinutesAmountInput = styled(BaseInput)`
+  width: 4rem;
 `
 export const CountDownContainer = styled.div`
   font-family: 'Roboto Mono', sans-serif;
@@ -38,6 +63,7 @@ export const CountDownContainer = styled.div`
   span {
     background: ${props => props.theme['gray-700']};
     padding: 2rem 1 rem;
+    justify-content: center;
     border-radius: 8px;
   }
 `
@@ -50,6 +76,7 @@ export const Separator = styled.div`
   justify-content: center;
 `
 export const StartCountDownButton = styled.button`
+  font-family: 'Roboto Mono', monospace;
   width: 100%;
   border: 0;
   padding: 1rem;
@@ -63,13 +90,12 @@ export const StartCountDownButton = styled.button`
   background: ${props => props.theme['green-500']};
   color: ${props => props.theme['gray-100']};
 
-  &¨:disabled {
+  &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
   background: ${(props) => props.theme['green-700'] }
 }
-
 `
