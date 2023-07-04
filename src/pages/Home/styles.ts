@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.main`
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', sans-serif;
   height: 100%;
   flex: 1;
   display: flex;
@@ -16,7 +16,7 @@ export const HomeContainer = styled.main`
   }
 `
 export const FormContainer = styled.div`
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', sans-serif;
   width: 100%;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ export const FormContainer = styled.div`
 const BaseInput = styled.input`
   background:  transparent;
   height: 2.5rem;
-  border: 0;
+  border: none;
   border-bottom: 2px solid ${(props) => props.theme['gray-500']};
   font-weight: bold;
   font-size: inherit;
@@ -48,6 +48,10 @@ const BaseInput = styled.input`
 `
 export const TaskInput = styled(BaseInput)`
   flex: 1;
+
+  &::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
 `
 export const MinutesAmountInput = styled(BaseInput)`
   width: 4rem;
@@ -62,7 +66,7 @@ export const CountDownContainer = styled.div`
   
   span {
     background: ${props => props.theme['gray-700']};
-    padding: 2rem 1 rem;
+    padding: 2rem 1rem;
     justify-content: center;
     border-radius: 8px;
   }
@@ -97,5 +101,5 @@ export const StartCountDownButton = styled.button`
 
   &:not(:disabled):hover {
   background: ${(props) => props.theme['green-700'] }
-}
+  }
 `

@@ -5,10 +5,12 @@ import { defaultTheme } from "./styles/themes/default";
  
 export function App() {
   return (
+    //<GlobalStyle>
     <ThemeProvider theme={defaultTheme}>
       < BrowserRouter>
       <Router />
       </BrowserRouter>
     </ThemeProvider>
+   // </GlobalStyle>
   )
 }
