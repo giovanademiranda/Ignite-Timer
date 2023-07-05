@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.main`
-  font-family: 'Roboto Mono', sans-serif;
   height: 100%;
   flex: 1;
   display: flex;
@@ -16,7 +15,6 @@ export const HomeContainer = styled.main`
   }
 `
 export const FormContainer = styled.div`
-  font-family: 'Roboto Mono', sans-serif;
   width: 100%;
   display: flex;
   align-items: center;
@@ -73,13 +71,13 @@ export const CountDownContainer = styled.div`
 `
 export const Separator = styled.div`
   padding: 2rem 0;
-  color: ${props => props.theme['greeen-500']};
+  color: ${props => props.theme['green-500']};
   width: 4rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
 `
-export const StartCountDownButton = styled.button`
+export const BaseCountDownButton = styled.button`
   font-family: 'Roboto Mono', monospace;
   width: 100%;
   border: 0;
@@ -91,15 +89,24 @@ export const StartCountDownButton = styled.button`
   gap: 0.5rem;
   font-weight: bold;
   cursor: pointer;
-  background: ${props => props.theme['green-500']};
   color: ${props => props.theme['gray-100']};
 
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
   }
+`
+export const StartCountDownButton = styled(BaseCountDownButton)`
+  background: ${props => props.theme['green-500']};
 
   &:not(:disabled):hover {
   background: ${(props) => props.theme['green-700'] }
+  }
+`
+export const StopCountDownButton = styled(BaseCountDownButton)`
+  background: ${(props) => props.theme['red-500']};
+
+  &:not(:disabled):hover {
+  background: ${(props) => props.theme['red-700'] }
   }
 `

@@ -7,14 +7,12 @@ export const HistoryContainer = styled.main`
   flex-direction: column;
 
   h1 {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     color: ${(props) => props.theme['gray-100']}
   }
 `
 
 export const HistoryList = styled.div`
-  font-family: 'Roboto', sans-serif;
   flex: 1;
   overflow: auto;
   margin-top: 2rem;
@@ -71,7 +69,7 @@ interface StatusProps {
   statusColor: keyof typeof STATUS_COLORS
 }
 
-export const Status = styled.span`
+export const Status = styled.span<StatusProps>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
